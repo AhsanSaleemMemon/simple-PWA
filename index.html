@@ -17,12 +17,20 @@
     <link rel="manifest" href="pwa-manifest.json">
     <link rel="stylesheet" href="css/style.css">
     <script type='text/javascript' src="js/main.js"></script>
+    <script type="text/javascript">
+        function openPopup() {
+            // Open a window popup
+            window.open('https://example.com', 'popupWindow', 'width=600,height=400');
+        }
+    </script>
 </head>
 <body>
     <div class="content">
         <img src="img/fav-192.png" alt="Red Cherry">
         <h1>Red Cherry is here :)</h1>
         <a href="https://redcherry.ir">redcherry.ir</a>
+        <!-- Button to open popup -->
+        <button onclick="openPopup()">Open Popup</button>
     </div>
 </body>
 </html>
