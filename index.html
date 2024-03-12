@@ -18,9 +18,20 @@
     <link rel="stylesheet" href="css/style.css">
     <script type='text/javascript' src="js/main.js"></script>
     <script type="text/javascript">
-        function openPopup() {
+        async function openPopup() {
             // Open a window popup
-            window.open('https://example.com', 'popupWindow', 'width=600,height=400');
+            const popup = window.open('https://example.com', 'popupWindow', 'width=600,height=400');
+            
+            // Return a promise that resolves after the popup window is opened
+            return new Promise((resolve, reject) => {
+                if (popup) {
+                    // If the popup window is opened, resolve the promise
+                    resolve(popup);
+                } else {
+                    // If unable to open popup window, reject the promise
+                    reject(new Error('Failed to open popup window'));
+                }
+            });
         }
     </script>
 </head>
